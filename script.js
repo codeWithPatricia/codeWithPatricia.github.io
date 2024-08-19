@@ -17,7 +17,7 @@ $(document).ready(function(){
     //Typing animation
 
         new Typed('#type-it', {
-            strings: ['Designer', 'Devloper','Freelancer'],
+            strings: ['Data Analyst','Freelancer'],
             typeSpeed: 100,
             loop:true
       });
