@@ -220,6 +220,28 @@ a:hover{
     margin-left: 20px;
 }
 
+.portfolio-skill{
+    padding: 8px 0px;
+}
+
+.portfolio-skill ul li{
+    width: 120px;
+    height: 30px;
+    border-radius: 30px;
+    background: rgba(55, 55, 55, 0.07);
+    align-content: center;
+    text-align: center;
+    display: inline-block;
+    color: var(--dark-color);
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 12px;
+    margin-bottom: 10px;
+    text-decoration: none;
+
+}
+
 .bg-gray{
     background-color: rgba(254, 196, 72, 0.1);
 }
