@@ -715,7 +715,7 @@ main{
     text-transform: uppercase;
 }
 
-.contact-infos p{
+.contact-infos a{
     margin: 0;
     font-size: 20px;
     color: #fff;
