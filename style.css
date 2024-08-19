@@ -215,6 +215,11 @@ a:hover{
     border-color: var(--dark-color);
     box-shadow: 5px 5px 0 -2px var(--primary-color);
 }
+
+.portfolio-btn .colored-btn{
+    margin-left: 20px;
+}
+
 .bg-gray{
     background-color: rgba(254, 196, 72, 0.1);
 }
