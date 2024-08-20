@@ -56,33 +56,26 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // Hide navbar on portfolio section
-document.addEventListener('DOMContentLoaded', function() {
-    const navbar = document.querySelector('.navbar');
+document.addEventListener('DOMContentLoaded', function () {
+    const navbar = document.querySelector('.main-header');
     const portfolioSection = document.getElementById('portfolio');
-    const serviceSection = document.getElementById('service');
+    const portfolioSectionTop = portfolioSection.offsetTop;
+    const portfolioSectionHeight = portfolioSection.offsetHeight;
 
-    function checkNavbarVisibility() {
-        const scrollPosition = window.scrollY + window.innerHeight;
-        const portfolioTop = portfolioSection.offsetTop;
-        const serviceBottom = serviceSection.offsetTop + serviceSection.offsetHeight;
+    function checkScrollPosition() {
+        const scrollPosition = window.scrollY;
+        const isInPortfolioSection = scrollPosition >= portfolioSectionTop && scrollPosition < (portfolioSectionTop + portfolioSectionHeight);
 
-        if (scrollPosition > portfolioTop && scrollPosition < (portfolioTop + portfolioSection.offsetHeight)) {
-            // In the portfolio section, hide the navbar
-            navbar.classList.add('hidden');
-        } else if (scrollPosition > serviceBottom) {
-            // After the end of the service section, hide the navbar
-            navbar.classList.add('hidden');
+        if (isInPortfolioSection) {
+            navbar.style.display = 'none'; // Hide navbar in the portfolio section
         } else {
-            // Otherwise, show the navbar
-            navbar.classList.remove('hidden');
+            navbar.style.display = 'block'; // Show navbar elsewhere
         }
     }
 
-    // Check visibility on scroll
-    window.addEventListener('scroll', checkNavbarVisibility);
-
-    // Also check on page load
-    checkNavbarVisibility();
+    // Check scroll position on load and on scroll
+    checkScrollPosition();
+    window.addEventListener('scroll', checkScrollPosition);
 });
 
 
