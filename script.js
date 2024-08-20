@@ -56,27 +56,37 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // Hide navbar on portfolio section
-document.addEventListener('DOMContentLoaded', function () {
-    const navbar = document.querySelector('.main-header');
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const navbar = document.querySelector('.navbar');
     const portfolioSection = document.getElementById('portfolio');
-    const portfolioSectionTop = portfolioSection.offsetTop;
-    const portfolioSectionHeight = portfolioSection.offsetHeight;
+    const skillsSection = document.getElementById('skills');
 
-    function checkScrollPosition() {
-        const scrollPosition = window.scrollY;
-        const isInPortfolioSection = scrollPosition >= portfolioSectionTop && scrollPosition < (portfolioSectionTop + portfolioSectionHeight);
+    function checkNavbarVisibility() {
+        const scrollPosition = window.scrollY + window.innerHeight;
+        const portfolioTop = portfolioSection.offsetTop;
+        const skillsBottom = skillsSection.offsetTop + skillsSection.offsetHeight;
 
-        if (isInPortfolioSection) {
-            navbar.style.display = 'none'; // Hide navbar in the portfolio section
+        if (scrollPosition > portfolioTop && scrollPosition < (portfolioTop + portfolioSection.offsetHeight)) {
+            // In the portfolio section, hide the navbar
+            navbar.classList.add('hidden');
+        } else if (scrollPosition > skillsBottom) {
+            // After the end of the skills section, hide the navbar
+            navbar.classList.add('hidden');
         } else {
-            navbar.style.display = 'block'; // Show navbar elsewhere
+            // Otherwise, show the navbar
+            navbar.classList.remove('hidden');
         }
     }
 
-    // Check scroll position on load and on scroll
-    checkScrollPosition();
-    window.addEventListener('scroll', checkScrollPosition);
+    // Check visibility on scroll
+    window.addEventListener('scroll', checkNavbarVisibility);
+
+    // Also check on page load
+    checkNavbarVisibility();
 });
+</script>
+
 
 
 //Document Ready
