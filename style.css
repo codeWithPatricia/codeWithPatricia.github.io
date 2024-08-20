@@ -541,10 +541,7 @@ main{
     color: var(--dark-color);
     font-size: 32px;
 }
-
-#skills .icon{
-     border: none;
-}    
+   
 
 .feature-box .content{
     max-width: calc(100% - 70px);
