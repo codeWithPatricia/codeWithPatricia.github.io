@@ -56,22 +56,21 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // Hide navbar on portfolio section
-<script>
 document.addEventListener('DOMContentLoaded', function() {
     const navbar = document.querySelector('.navbar');
     const portfolioSection = document.getElementById('portfolio');
-    const skillsSection = document.getElementById('skills');
+    const serviceSection = document.getElementById('service');
 
     function checkNavbarVisibility() {
         const scrollPosition = window.scrollY + window.innerHeight;
         const portfolioTop = portfolioSection.offsetTop;
-        const skillsBottom = skillsSection.offsetTop + skillsSection.offsetHeight;
+        const serviceBottom = serviceSection.offsetTop + serviceSection.offsetHeight;
 
         if (scrollPosition > portfolioTop && scrollPosition < (portfolioTop + portfolioSection.offsetHeight)) {
             // In the portfolio section, hide the navbar
             navbar.classList.add('hidden');
-        } else if (scrollPosition > skillsBottom) {
-            // After the end of the skills section, hide the navbar
+        } else if (scrollPosition > serviceBottom) {
+            // After the end of the service section, hide the navbar
             navbar.classList.add('hidden');
         } else {
             // Otherwise, show the navbar
@@ -85,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Also check on page load
     checkNavbarVisibility();
 });
-</script>
+
 
 
 
