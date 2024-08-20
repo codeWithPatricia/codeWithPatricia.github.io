@@ -220,32 +220,6 @@ a:hover{
     box-shadow: 5px 5px 0 -2px var(--primary-color);
 }
 
-.portfolio-btn .colored-btn{
-    margin-left: 20px;
-}
-
-.portfolio-skill{
-    padding: 8px 0px;
-}
-
-.portfolio-skill ul li{
-    width: 120px;
-    height: 30px;
-    border-radius: 30px;
-    background: rgba(55, 55, 55, 0.07);
-    align-content: center;
-    text-align: center;
-    display: inline-block;
-    color: var(--dark-color);
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    font-weight: 500;
-    font-size: 12px;
-    margin-bottom: 10px;
-    text-decoration: none;
-
-}
-
 .bg-gray{
     background-color: rgba(254, 196, 72, 0.1);
 }
@@ -597,6 +571,121 @@ main{
 }
 
 /* Portfolio */
+.hidden {
+    display: none;
+}
+
+.portfolio-nav {
+    text-align: center;
+    background-color: rgba(254, 196, 72, 0.1);
+    margin-bottom: 10px;
+    top: 10px; /* Adjust based on the height of the title */
+    z-index: 1000;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--primary-color); /* Optional: Add a border to separate from the content */
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.portfolio-nav ul {
+    justify-content: center;
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    cursor: pointer;
+}
+
+.portfolio-nav ul li {
+    display: inline;
+    margin: 0 10px;
+    
+}
+
+.portfolio-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: var(--dark-color);
+    border-radius: 5px;
+    white-space: nowrap;
+}
+
+.portfolio-nav ul li a.active,
+.portfolio-nav ul li a:hover {
+    background-color: var(--primary-color);
+}
+
+.portfolio-nav::-webkit-scrollbar {
+    width: 5px; /* Width of the scrollbar */
+    height: 3px; /* Width of the scrollbar */
+}
+
+.portfolio-box{
+    max-height: 450px;
+    overflow-y: scroll;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.portfolio-box::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+}
+
+.portfolio-box::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color of the scrollbar track */
+    border-radius: 10px;
+}
+
+.portfolio-box::-webkit-scrollbar-thumb {
+    background: var(--dark-color); /* Color of the scrollbar thumb */
+    border-radius: 10px;
+}
+
+.portfolio-box::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color); /* Color of the scrollbar thumb when hovered */
+}
+
+.portfolio-item {
+    position: relative;
+    width: 100%;
+    display: none; /* Initially hide all items */
+}
+.portfolio-item.show{
+    display:flex; /* Show items with the 'show' class */
+}
+
+.portfolio-item > button {
+    position: absolute;
+    inset: 0;
+    justify-self: center;   
+}
+
+.portfolio-btn .colored-btn{
+    margin-left: 20px;
+}
+
+.portfolio-skill{
+    padding: 8px 0px;
+}
+
+.portfolio-skill ul li{
+    width: 120px;
+    height: 30px;
+    border-radius: 30px;
+    align-content: center;
+    text-align: center;
+    display: inline-block;
+    color: var(--dark-color);
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
 .portfolio-box .portfolio-img{
     position: relative;
     border: 2px solid var(--dark-color);
