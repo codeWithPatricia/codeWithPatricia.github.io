@@ -11,6 +11,74 @@ $(window).on("scroll", function(){
     }
 });
 
+// close the navbar when a link is clicked
+document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        // Collapse the navbar
+        const navbarCollapse = document.getElementById('navbar-collapse-toggle');
+        const bootstrapCollapse = new bootstrap.Collapse(navbarCollapse, {
+            toggle: false
+        });
+        bootstrapCollapse.hide();
+    });
+});
+
+// Portfolio Section 
+document.addEventListener("DOMContentLoaded", function() {
+    const filterButtons = document.querySelectorAll(".filter-button");
+    const portfolioItems = document.querySelectorAll(".portfolio-item");
+
+    filterButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            // Remove the 'active' class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove("active"));
+            // Add the 'active' class to the clicked button
+            button.classList.add("active");
+
+            const filter = button.getAttribute("data-filter");
+
+            portfolioItems.forEach(item => {
+                if (filter === "all") {
+                    item.classList.add("show");
+                } else {
+                    if (item.classList.contains(filter)) {
+                        item.classList.add("show");
+                    } else {
+                        item.classList.remove("show");
+                    }
+                }
+            });
+        });
+    });
+
+    // Trigger click on the first filter button (All) to show all items initially
+    filterButtons[0].click();
+});
+
+// Hide navbar on portfolio section
+document.addEventListener('DOMContentLoaded', function () {
+    const navbar = document.querySelector('.main-header');
+    const portfolioSection = document.getElementById('portfolio');
+    const portfolioSectionTop = portfolioSection.offsetTop;
+    const portfolioSectionHeight = portfolioSection.offsetHeight;
+
+    function checkScrollPosition() {
+        const scrollPosition = window.scrollY;
+        const isInPortfolioSection = scrollPosition >= portfolioSectionTop && scrollPosition < (portfolioSectionTop + portfolioSectionHeight);
+
+        if (isInPortfolioSection) {
+            navbar.style.display = 'none'; // Hide navbar in the portfolio section
+        } else {
+            navbar.style.display = 'block'; // Show navbar elsewhere
+        }
+    }
+
+    // Check scroll position on load and on scroll
+    checkScrollPosition();
+    window.addEventListener('scroll', checkScrollPosition);
+});
+
+
 //Document Ready
 $(document).ready(function(){
 
