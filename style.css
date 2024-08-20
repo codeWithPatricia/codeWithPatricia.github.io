@@ -551,6 +551,11 @@ main{
     padding-left: 20px;
 }
 
+.content{
+    weight:auto;
+    height:200px;
+}
+
 .feature-box h5{
     font-size: 24px;
     color: var(--dark-color);
