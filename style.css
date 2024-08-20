@@ -549,11 +549,7 @@ main{
 .feature-box .content{
     max-width: calc(100% - 70px);
     padding-left: 20px;
-}
-
-.content{
-    weight:auto;
-    height:200px;
+    height:100px;
 }
 
 .feature-box h5{
