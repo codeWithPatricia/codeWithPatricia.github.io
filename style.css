@@ -5,6 +5,10 @@
     --dark-color:#373737;
 }
 
+.text-justify {
+      text-align: justify;
+}
+
 body{
     font-family: "Jost", sans-serif;
     font-weight: 400;
