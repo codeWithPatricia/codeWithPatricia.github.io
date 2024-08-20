@@ -534,6 +534,9 @@ main{
     .feature-box h5{
         font-size: 22px;
     }
+    .feature-box .content{
+    height:auto;
+}
 }
 
 .feature-box p{
@@ -718,6 +721,17 @@ main{
 }
 
 @media (max-width:767px){
+     .portfolio-nav {
+        position: static;
+    }
+
+    .portfolio-nav ul {
+        justify-content: start;
+    }
+    
+    .portfolio-nav ul li a {
+        padding: 10px 10px;
+    }
     .portfolio-box .portfolio-text h4{
         font-size: 26px;
         margin-bottom: 10px;
