@@ -580,12 +580,12 @@ main{
 
 .portfolio-nav {
     text-align: center;
-    background-color: rgba(254, 196, 72, 0.1);
+    background-color:#fff;
     margin-bottom: 10px;
-    top: 10px; /* Adjust based on the height of the title */
+    top: 10px; 
     z-index: 1000;
     padding: 20px 0;
-    border-bottom: 1px solid var(--primary-color); /* Optional: Add a border to separate from the content */
+    border-bottom: 1px solid var(--primary-color); 
     overflow-x: auto;
     white-space: nowrap;
 }
